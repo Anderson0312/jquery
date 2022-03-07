@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo jquery</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <style>
+
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+        }
+        #box2 {
+            width: 200px;
+            height: 200px;
+            background-color: black;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div style="display: flex; justify-content: space-between">
+        <div id='box'></div>
+        <div id='box2'></div>
+    </div>
+    <p id='text'></p>
+
+
+    <script>
+        $('#box').on({
+            click: ()=> {
+                $('#text').text('Clique no quadrado');
+                $('#box').css('background-color','red');
+            },
+            mouseenter: ()=> {
+                $('#text').text('Mouse entrou no quadrado');
+                $('#box').css('background-color','green');
+            },
+            mouseleave: ()=> {
+                $('#text').text('Mouse saiu do quadrado');
+                $('#box').css('background-color','gray');
+            }
+        })
+        
+
+        /* cria um evento de click na caixa 2, que passa para caixa 1 com o metodo trigger, mesmo sem ter clicado nela.*/
+        $('#box2').click(()=> {
+            $('#box').trigger('click');
+        });
+       
+
+    </script>
+</body>
+</html>
