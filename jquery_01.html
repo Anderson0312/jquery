@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprendendo jquery</title>
+
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+    <div id="calc">
+        <label for="">Valor 1</label>
+        <input type="text" id="v1" value="">
+        <br><br>
+        <label for="">Valor 2</label>
+        <input type="text" id="v2" value="">
+        <br><br>
+        <label for="">Resultado</label>
+        <input type="text" id="res" value="">
+        <br><br>
+        <button id="btn-somarjs">Somar JS</button>
+        <button id="btn-somarjq">Somar JQ</button>
+    </div>
+
+
+    <script>
+
+        /* Java Script puro */
+
+        let btn_somarjs = document.getElementById('btn-somarjs').addEventListener('click', ()=>{
+            let v1 = document.getElementById("v1").value;
+            let v2 = document.getElementById("v2").value;
+
+            let soma = parseInt(v1)+parseInt(v2);
+
+            let res = document.getElementById("res").value=soma
+
+        });
+        
+        /* Jquery */
+
+        $('#btn-somarjq').click(()=> {
+            let v1=$('#v1').val();
+            let v2=$('#v2').val();
+
+            let soma =  parseInt(v1) + parseInt(v2);
+
+            let res = $('#res').val(soma);
+        })
+
+    </script>
+
+
+</body>
+</html>
